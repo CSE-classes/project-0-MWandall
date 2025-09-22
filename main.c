@@ -56,7 +56,8 @@ mpenter(void)
 static void
 mpmain(void)
 {
-  cprintf("CSE3320 proj0 printing in kernel space\n");//ADDED print message to boot
+  cprintf("cpu%d: starting\n", cpu->id); //not sure if this line should be added. instructions unclear see proj0 4 for desired output
+  cprintf("CSE3320 proj0 printing in \nkernel space ");//ADDED print message to boot
   cprintf("cpu%d: starting\n", cpu->id);
   idtinit();       // load idt register
   xchg(&cpu->started, 1); // tell startothers() we're up
